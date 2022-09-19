@@ -25,10 +25,9 @@ $('.personalIcon').mouseleave(function () {
     $('.personalIcon .loginTab').css('display', 'none')
 })
 
-/*图片导航效果*/
+/*图片导航效果:selected下划线*/
 $('.pictureList a').map(function (index, item) {
-    if (index === 0) {
-
+    if (index == 0) {
         $(item).children('.pictureItem').addClass('selected');
     } else {
         $(item).children('.pictureItem').removeClass('selected');
@@ -36,7 +35,6 @@ $('.pictureList a').map(function (index, item) {
 })
 
 $('.pictureList a .pictureItem').on('click', function () {
-    console.log(this)
     $(this).addClass('selected').parent('a').siblings().children('.pictureItem').removeClass('selected')
 })
 
@@ -73,7 +71,6 @@ function dragMoveX(container) {
     let scrollLeft;
     //鼠标按下
     $(document.body).on("mousedown", container, function (event) {
-        // console.log('mousedown')
         pauseEvent(event);
         flag = true;
         downX = event.clientX;
@@ -85,8 +82,6 @@ function dragMoveX(container) {
         if (flag) {
             let moveX = event.clientX;
             let scrollX = moveX - downX;
-            // console.log("moveX" + moveX);
-            // console.log("scrollX" + scrollX);
             if (scrollX < 0 && scrollLeft > 0) {
                 $(container).scrollLeft(scrollLeft - scrollX)
             } else {
@@ -96,12 +91,10 @@ function dragMoveX(container) {
     });
     //鼠标释放
     $(document).on("mouseup", function () {
-        // console.log('mouseup')
         flag = false;
     });
     //鼠标移出元素
     $(container).on("mouseleave", function (event) {
-        // console.log('mouseleave')
         if (event.pageX < 0 || event.pageX > document.body.offsetWidth) {
             flag = false;
         }
@@ -114,7 +107,6 @@ dragMoveX('.scrollSwiper');
 let first =0;
 let second = first+1;
 let third= second+1;
-let ctr=0;
 $(document).on("click",".swiper-narrow-r",function(event){
     event.preventDefault();
     //resetSize();
@@ -135,7 +127,7 @@ $(document).on("click",".swiper-narrow-l",function(event){
     event.preventDefault();
     //resetSize();
     $('.scrollSwiper').animate({
-        scrollLeft: "-=520px"
+        scrollLeft: "-=500px"
     }, "fast");
 
     first--;
