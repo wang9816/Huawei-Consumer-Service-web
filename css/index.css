@@ -219,7 +219,8 @@ body {
 }
 .pictureNavContainer .pictureNav .pictureListContainer .pictureList a {
   position: relative;
-  display: flex;
+  display: inline-block;
+  width: 144px;
 }
 .pictureNavContainer .pictureNav .pictureListContainer .pictureList > a:hover {
   text-decoration: none;
@@ -234,7 +235,7 @@ body {
   height: 174px;
   /*box-sizing: border-box;
           padding: 32px;*/
-  margin-left: 64px;
+  margin: 0 32px;
   flex-direction: column;
   text-align: center;
 }
